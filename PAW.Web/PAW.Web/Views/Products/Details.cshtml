@@ -1,0 +1,29 @@
+﻿@model PAW.Web.Models.Product
+
+@{
+    ViewData["Title"] = "Detalle del producto";
+}
+
+<h1>@Model.ProductName</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Descripción</dt>
+    <dd class="col-sm-9">@Model.Description</dd>
+
+    <dt class="col-sm-3">Categoría</dt>
+    <dd class="col-sm-9">@Model.Category?.CategoryName</dd>
+
+    <dt class="col-sm-3">Precio</dt>
+    <dd class="col-sm-9">@Model.Inventory?.UnitPrice</dd>
+
+    <dt class="col-sm-3">Stock</dt>
+    <dd class="col-sm-9">@Model.Inventory?.UnitsInStock</dd>
+
+    <dt class="col-sm-3">Proveedor</dt>
+    <dd class="col-sm-9">@Model.Supplier?.SupplierName</dd>
+
+    <dt class="col-sm-3">Rating</dt>
+    <dd class="col-sm-9">@Model.Rating</dd>
+</dl>
+
+<a asp-action="Index">Volver a la lista</a>
